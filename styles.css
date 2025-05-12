@@ -309,8 +309,8 @@ nav {
 
 .about-details {
     display: flex;
-    gap: 30px;
-    margin-top: 30px;
+    margin: 0 auto;
+    gap: 20px;
 }
 
 .detail {
