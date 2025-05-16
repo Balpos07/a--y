@@ -25,6 +25,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <!-- Header Section -->
     <header>
@@ -93,55 +94,53 @@
                 </div> -->
           <div class="about-text">
             <div class="sub-about">
-              <h3>Who I Am</h3>
               <p>
-                I'm a passionate front-end developer with a keen eye for design
+                <span style="font-weight: bold; font-size: 16px"
+                  >Who I Am - </span
+                >I'm a passionate front-end developer with a keen eye for design
                 and a love for creating intuitive, dynamic user experiences.
                 With a background in Computer Science, I bring a unique
                 perspective to my development work.
               </p>
-            </div>
-
-            <div class="sub-about">
-              <h3>What I Do</h3>
               <p>
-                I specialize in building responsive websites and web
+                <span style="font-weight: bold; font-size: 16px"
+                  >What I Do - </span
+                >I specialize in building responsive websites and web
                 applications using modern front-end technologies. My focus is on
                 creating clean, efficient code that delivers exceptional user
                 experiences across all devices.
               </p>
-            </div>
-
-            <div class="sub-about">
-              <h3>My Approach</h3>
               <p>
-                I believe in the power of collaboration and continuous learning.
-                I stay updated with the latest industry trends and best
-                practices to ensure my work is always at the cutting edge of
-                front-end development.
+                <span style="font-weight: bold; font-size: 16px"
+                  >My Approach - </span
+                >I believe in the power of collaboration and continuous
+                learning. I stay updated with the latest industry trends and
+                best practices to ensure my work is always at the cutting edge
+                of front-end development.
               </p>
             </div>
-
-            <div class="about-details">
-              <div class="detail">
-                <i class="fas fa-graduation-cap"></i>
-                <h4>Education</h4>
-                <p>
-                  Computer Science, <br> Adekunle Ajasin University, Akungba-Akoko
-                </p>
-              </div>
-              <div class="detail">
-                <i class="fas fa-briefcase"></i>
-                <h4>Experience</h4>
-                <p>3+ Years in Front-End Development</p>
-              </div>
-              <div class="detail">
-                <i class="fas fa-map-marker-alt"></i>
-                <h4>Location</h4>
-                <p>Lagos, Nigeria</p>
-              </div>
-            </div>
           </div>
+
+          <!-- <div class="about-details">
+            <div class="detail">
+              <i class="fas fa-graduation-cap"></i>
+              <h4>Education</h4>
+              <p>
+                Computer Science, <br />
+                Adekunle Ajasin University, Akungba-Akoko
+              </p>
+            </div>
+            <div class="detail">
+              <i class="fas fa-briefcase"></i>
+              <h4>Experience</h4>
+              <p>3+ Years in Front-End Development</p>
+            </div>
+            <div class="detail">
+              <i class="fas fa-map-marker-alt"></i>
+              <h4>Location</h4>
+              <p>Lagos, Nigeria</p>
+            </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -166,11 +165,16 @@
                 <h4>CSS3</h4>
               </div>
               <div class="skill-item">
+                <i class="fab fa-css3-alt"></i>
+                <h4>Tailwind CSS</h4>
+              </div>
+              <div class="skill-item">
                 <i class="fab fa-js"></i>
                 <h4>JavaScript</h4>
-                <!-- <div class="skill-bar">
-                                <div class="skill-level" style="width: 85%"></div>
-                            </div> -->
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-js"></i>
+                <h4>jQuery</h4>
               </div>
               <div class="skill-item">
                 <i class="fab fa-react"></i>
@@ -198,6 +202,14 @@
           <div class="skill-category">
             <h3>Additional Skills</h3>
             <div class="skills-grid">
+              <div class="skill-item">
+                <i class="fas fa-php"></i>
+                <h4>PHP</h4>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-mysql"></i>
+                <h4>MySQL</h4>
+              </div>
               <div class="skill-item">
                 <i class="fas fa-mobile-alt"></i>
                 <h4>Responsive Design</h4>
@@ -228,7 +240,6 @@
           <!-- <div class="underline"></div> -->
         </div>
         <div class="projects-grid">
-          <!-- Project 1 -->
           <div class="project-card">
             <div class="project-image">
               <img src="/api/placeholder/600/400" alt="Project 1" />
@@ -256,7 +267,6 @@
             </div>
           </div>
 
-          <!-- Project 2 -->
           <div class="project-card">
             <div class="project-image">
               <img src="/assets/map.png" alt="Project 2" />
@@ -290,7 +300,6 @@
             </div>
           </div>
 
-          <!-- Project 3 -->
           <div class="project-card">
             <div class="project-image">
               <img src="assets/task.jpeg" alt="Project 3" />
@@ -324,7 +333,6 @@
             </div>
           </div>
 
-          <!-- Project 4 -->
           <div class="project-card">
             <div class="project-image">
               <img src="assets/calc.jpeg" alt="Project 4" />
@@ -507,7 +515,7 @@
                   <label for="email">Email</label>
                   <input type="email" id="email" name="email" required />
                 </div>
-                <div class="form-group" style="width: 100%;">
+                <div class="form-group" style="width: 100%">
                   <label for="subject">Subject</label>
                   <input type="text" id="subject" name="subject" required />
                 </div>

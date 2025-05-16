@@ -69,14 +69,6 @@ section {
     display: inline-block;
 }
 
-/* .underline {
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-    margin: 0 auto;
-    margin-top: 5px;
-} */
-
 img {
     max-width: 100%;
     height: auto;
@@ -219,7 +211,7 @@ nav {
 }
 
 .hamburger {
-    display: none; /* Hide by default on larger screens */
+    display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
@@ -281,7 +273,7 @@ nav {
 }
 
 .hero-image img {
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
     border-radius: 50%;
 }
@@ -355,7 +347,7 @@ nav {
 }
 
 .skill-item {
-    text-align: center;
+    text-align: left;
 }
 
 .skill-item i {
@@ -771,7 +763,7 @@ footer {
 
     .about-content {
         flex-direction: column;
-        text-align: center;
+        text-align: justify;
     }
 
     .about-details {
@@ -806,10 +798,10 @@ footer {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Hide nav links by default on mobile */
+        display: none; 
         flex-direction: column;
         position: absolute;
-        top: 80px; /* Adjust based on header height */
+        top: 75px;
         left: 0;
         width: 100%;
         background-color: var(--background-color);
