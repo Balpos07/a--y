@@ -62,7 +62,7 @@ section {
 }
 
 .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--text-color);
     margin-bottom: 15px;
     position: relative;
@@ -123,7 +123,7 @@ ul {
 
 .small-btn {
     padding: 8px 15px;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
 }
 
 .highlight {
@@ -155,7 +155,7 @@ nav {
 }
 
 .logo a {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text-color);
 }
@@ -194,7 +194,7 @@ nav {
 }
 
 .theme-toggle i {
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     color: var(--text-color);
 }
 
@@ -243,13 +243,13 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 15px;
 }
 
 .hero-text h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 20px;
     color: var(--secondary-text);
@@ -290,7 +290,7 @@ nav {
 }
 
 .sub-about h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 15px;
 }
 
@@ -310,18 +310,18 @@ nav {
 }
 
 .detail i {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
 .detail h4 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-bottom: 5px;
 }
 
 .detail p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: var(--secondary-text);
 }
 
@@ -336,7 +336,7 @@ nav {
 }
 
 .skill-category h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 20px;
 }
 
@@ -351,13 +351,13 @@ nav {
 }
 
 .skill-item i {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
 .skill-item h4 {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: 400;
     margin-bottom: 10px;
 }
@@ -406,12 +406,12 @@ nav {
 }
 
 .project-info h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
 .project-info p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     margin-bottom: 15px;
 }
 
@@ -422,7 +422,7 @@ nav {
 }
 
 .project-tech span {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     background-color: var(--primary-color);
     color: white;
     padding: 5px 10px;
@@ -466,22 +466,22 @@ nav {
 }
 
 .timeline-content h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
 .timeline-content h4 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-bottom: 5px;
 }
 
 .timeline-content p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     margin-bottom: 10px;
 }
 
 .timeline-content .date {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: var(--secondary-text);
 }
 
@@ -506,7 +506,7 @@ nav {
 }
 
 .testimonial-content p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     margin-bottom: 20px;
 }
 
@@ -528,12 +528,12 @@ nav {
 }
 
 .author-info h4 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-bottom: 5px;
 }
 
 .author-info p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: var(--secondary-text);
 }
 
@@ -549,7 +549,7 @@ nav {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     color: var(--text-color);
 }
 
@@ -581,12 +581,12 @@ nav {
 }
 
 .contact-info h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 20px;
 }
 
 .contact-info p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     margin-bottom: 20px;
 }
 
@@ -603,17 +603,17 @@ nav {
 }
 
 .contact-item i {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--primary-color);
 }
 
 .contact-item h4 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-bottom: 5px;
 }
 
 .contact-item p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: var(--secondary-text);
 }
 
@@ -624,7 +624,7 @@ nav {
 }
 
 .social-links a {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--text-color);
     transition: var(--transition);
 }
@@ -647,7 +647,7 @@ nav {
 
 .contact-form label {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     margin-bottom: 5px;
 }
 
@@ -657,7 +657,7 @@ nav {
     padding: 10px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     transition: var(--transition);
 }
 
@@ -686,7 +686,7 @@ footer {
 }
 
 .footer-logo a {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text-color);
 }
@@ -707,7 +707,7 @@ footer {
 }
 
 .footer-social a {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--text-color);
     transition: var(--transition);
 }
@@ -724,7 +724,7 @@ footer {
 }
 
 .footer-bottom p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: var(--secondary-text);
 }
 
@@ -811,7 +811,7 @@ footer {
     }
 
     .nav-links.active {
-        display: flex; /* Show nav links when active */
+        display: flex; 
     }
 
     .nav-links li {
@@ -824,117 +824,27 @@ footer {
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .hero-text h2 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .hero-text p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .about-text h3 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .about-text p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .skill-category h3 {
-        font-size: 1.5rem;
-    }
-
-    .project-info h3 {
-        font-size: 1.2rem;
-    }
-
-    .project-info p {
-        font-size: 0.9rem;
-    }
-
-    .timeline-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .timeline-content h4 {
-        font-size: 0.9rem;
-    }
-
-    .timeline-content p {
-        font-size: 0.9rem;
-    }
-
-    .testimonial-content p {
-        font-size: 0.9rem;
-    }
-
-    .testimonial-author h4 {
-        font-size: 0.9rem;
-    }
-
-    .testimonial-author p {
-        font-size: 0.8rem;
-    }
-
-    .contact-info h3 {
-        font-size: 1.5rem;
-    }
-
-    .contact-info p {
-        font-size: 0.9rem;
-    }
-
-    .contact-item h4 {
-        font-size: 0.9rem;
-    }
-
-    .contact-item p {
-        font-size: 0.9rem;
-    }
-
-    .footer-logo a {
-        font-size: 1.5rem;
-    }
-
-    .footer-links ul li a {
-        font-size: 0.9rem;
-    }
-
-    .footer-social a {
-        font-size: 1.2rem;
-    }
-
-    .footer-bottom p {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text h2 {
-        font-size: 1.2rem;
-    }
-
-    .hero-text p {
-        font-size: 0.9rem;
-    }
-
-    .about-text h3 {
-        font-size: 1.2rem;
-    }
-
-    .about-text p {
-        font-size: 0.9rem;
-    }
-
-    .skill-category h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .project-info h3 {
@@ -942,7 +852,7 @@ footer {
     }
 
     .project-info p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .timeline-content h3 {
@@ -950,19 +860,19 @@ footer {
     }
 
     .timeline-content h4 {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .timeline-content p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .testimonial-content p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .testimonial-author h4 {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .testimonial-author p {
@@ -970,31 +880,121 @@ footer {
     }
 
     .contact-info h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .contact-info p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .contact-item h4 {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .contact-item p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .footer-logo a {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .footer-links ul li a {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .footer-social a {
         font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text h2 {
+        font-size: 0.9rem;
+    }
+
+    .hero-text p {
+        font-size: 0.7rem;
+    }
+
+    .about-text h3 {
+        font-size: 0.9rem;
+    }
+
+    .about-text p {
+        font-size: 0.7rem;
+    }
+
+    .skill-category h3 {
+        font-size: 0.9rem;
+    }
+
+    .project-info h3 {
+        font-size: 0.7rem;
+    }
+
+    .project-info p {
+        font-size: 0.7rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 0.7rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 0.7rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.7rem;
+    }
+
+    .testimonial-content p {
+        font-size: 0.7rem;
+    }
+
+    .testimonial-author h4 {
+        font-size: 0.7rem;
+    }
+
+    .testimonial-author p {
+        font-size: 0.7rem;
+    }
+
+    .contact-info h3 {
+        font-size: 0.9rem;
+    }
+
+    .contact-info p {
+        font-size: 0.7rem;
+    }
+
+    .contact-item h4 {
+        font-size: 0.7rem;
+    }
+
+    .contact-item p {
+        font-size: 0.7rem;
+    }
+
+    .footer-logo a {
+        font-size: 0.9rem;
+    }
+
+    .footer-links ul li a {
+        font-size: 0.7rem;
+    }
+
+    .footer-social a {
+        font-size: 0.7rem;
     }
 
     .footer-bottom p {
