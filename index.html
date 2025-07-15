@@ -3,80 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-adsense-account" content="ca-pub-9075576671130299" />
-    <meta
-      name="description"
-      content="Front-End Developer Portfolio - Showcasing skills in HTML, CSS, JavaScript, and React"
-    />
-    <meta
-      name="keywords"
-      content="front-end developer, web development, HTML, CSS, JavaScript, React"
-    />
-    <title>A.</title>
+    <title>Ayomiposi - Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
-
   <body>
-    <!-- Header Section -->
-    <header>
-      <div class="container">
-        <nav>
-          <div class="logo">
-            <a href="#home">A.</a>
-          </div>
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <div class="theme-toggle">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
-          </div>
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <h2>A.</h2>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="container">
+      <div class="hero-container">
         <div class="hero-content">
-          <div class="hero-text">
-            <!-- <h1>Hi, I'm <span class="highlight">Ayomiposi</span></h1> -->
-            <h1>
-              Hi, I'm
-              <span class="highlight" id="changing-text">Ayomiposi</span>
-            </h1>
-            <h2>Front-End Developer</h2>
-            <p>
-              I build responsive and interactive web experiences with clean,
-              elegant code.
-            </p>
-            <div class="cta-buttons">
-              <a href="#projects" class="btn primary-btn">View My Work</a>
-              <a href="#contact" class="btn secondary-btn">Hire Me</a>
-            </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Ayomiposi</span>
+          </h1>
+          <p class="hero-subtitle">Full Stack Developer & UI/UX Designer</p>
+          <p class="hero-description">
+            I create beautiful, functional, and user-centered digital
+            experiences that solve real-world problems.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
           </div>
-          <div class="hero-image">
-            <img src="./assets/ayo.jpg" alt="A. - Front-End Developer" />
+        </div>
+        <div class="hero-image">
+          <div class="hero-avatar">
+            <img src="./assets/ayo.jpg" alt="Ayomiposi" />
           </div>
+        </div>
+      </div>
+      <div class="hero-background">
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
         </div>
       </div>
     </section>
@@ -84,148 +82,54 @@
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
-        <div class="section-header">
-          <h2>About Me</h2>
-          <!-- <div class="underline"></div> -->
-        </div>
+        <h2 class="section-title">About Me</h2>
         <div class="about-content">
-          <!-- <div class="about-image">
-                    <img src="./assets/ayo.jpg" alt="A. - Front-End Developer">
-                </div> -->
           <div class="about-text">
-            <div class="sub-about">
-              <p>
-                <span style="font-weight: bold; font-size: 16px"
-                  >Who I Am - </span
-                >I'm a passionate front-end developer with a keen eye for design
-                and a love for creating intuitive, dynamic user experiences.
-                With a background in Computer Science, I bring a unique
-                perspective to my development work.
-              </p>
-              <p>
-                <span style="font-weight: bold; font-size: 16px"
-                  >What I Do - </span
-                >I specialize in building responsive websites and web
-                applications using modern front-end technologies. My focus is on
-                creating clean, efficient code that delivers exceptional user
-                experiences across all devices.
-              </p>
-              <p>
-                <span style="font-weight: bold; font-size: 16px"
-                  >My Approach - </span
-                >I believe in the power of collaboration and continuous
-                learning. I stay updated with the latest industry trends and
-                best practices to ensure my work is always at the cutting edge
-                of front-end development.
-              </p>
-            </div>
-          </div>
-
-          <!-- <div class="about-details">
-            <div class="detail">
-              <i class="fas fa-graduation-cap"></i>
-              <h4>Education</h4>
-              <p>
-                Computer Science, <br />
-                Adekunle Ajasin University, Akungba-Akoko
-              </p>
-            </div>
-            <div class="detail">
-              <i class="fas fa-briefcase"></i>
-              <h4>Experience</h4>
-              <p>3+ Years in Front-End Development</p>
-            </div>
-            <div class="detail">
-              <i class="fas fa-map-marker-alt"></i>
-              <h4>Location</h4>
-              <p>Lagos, Nigeria</p>
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <div class="container">
-        <div class="section-header">
-          <h2>My Skills</h2>
-          <!-- <div class="underline"></div> -->
-        </div>
-        <div class="skills-content">
-          <div class="skill-category">
-            <h3>Front-End Development</h3>
+            A passionate front-end developer with a Computer Science background,
+            I specialize in crafting responsive, intuitive user experiences
+            using modern technologies, driven by a collaborative mindset and
+            commitment to continuous learning.
             <div class="skills-grid">
-              <div class="skill-item">
-                <!-- <i class="fab fa-html5"></i> -->
-                <h4>HTML5</h4>
+              <div class="skill-category">
+                <h3>Frontend</h3>
+                <div class="skill-tags">
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Shadcn UI</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">Tailwind CSS</span>
+                </div>
               </div>
-              <div class="skill-item">
-                <!-- <i class="fab fa-css3-alt"></i> -->
-                <h4>CSS3</h4>
+              <div class="skill-category">
+                <h3>Backend</h3>
+                <div class="skill-tags">
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">PostgreSQL</span>
+                  <span class="skill-tag">MongoDB</span>
+                </div>
               </div>
-              <div class="skill-item">
-                <!-- <i class="fab fa-css3-alt"></i> -->
-                <h4>Tailwind CSS</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fab fa-js"></i> -->
-                <h4>JavaScript</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fab fa-js"></i> -->
-                <h4>jQuery</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fab fa-react"></i> -->
-                <h4>React</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fab fa-sass"></i> -->
-                <h4>Sass</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fab fa-bootstrap"></i> -->
-                <h4>Bootstrap</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fab fa-git-alt"></i> -->
-                <h4>Git</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fab fa-npm"></i> -->
-                <h4>npm</h4>
+              <div class="skill-category">
+                <h3>Tools</h3>
+                <div class="skill-tags">
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">Docker</span>
+                  <span class="skill-tag">AWS</span>
+                  <span class="skill-tag">Figma</span>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="skill-category">
-            <h3>Additional Skills</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <!-- <i class="fas fa-php"></i> -->
-                <h4>PHP</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fas fa-mysql"></i> -->
-                <h4>MySQL</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fas fa-mobile-alt"></i> -->
-                <h4>Responsive Design</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fas fa-universal-access"></i> -->
-                <h4>Web Accessibility</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fas fa-search"></i> -->
-                <h4>SEO Basics</h4>
-              </div>
-              <div class="skill-item">
-                <!-- <i class="fas fa-tachometer-alt"></i> -->
-                <h4>Performance Optimization</h4>
-              </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">25+</div>
+              <div class="stat-label">Happy Clients</div>
             </div>
           </div>
         </div>
@@ -235,133 +139,82 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
       <div class="container">
-        <div class="section-header">
-          <h2>My Projects</h2>
-          <!-- <div class="underline"></div> -->
-        </div>
+        <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
           <div class="project-card">
             <div class="project-image">
-              <img src="/api/placeholder/600/400" alt="Project 1" />
-            </div>
-            <div class="project-info">
-              <h3>Project One</h3>
-              <p>
-                A responsive e-commerce website built with React and CSS Grid.
-                Features include product filtering, cart functionality, and user
-                authentication.
-              </p>
-              <div class="project-tech">
-                <span>React</span>
-                <span>CSS Grid</span>
-                <span>Firebase</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="btn small-btn" target="_blank"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a href="#" class="btn small-btn" target="_blank"
-                  ><i class="fab fa-github"></i> Code</a
-                >
+              <img src="./assets/calc.jpeg" alt="Weather App" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link">Live Demo</a>
+                  <a href="#" class="project-link">Source Code</a>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-image">
-              <img src="/assets/map.png" alt="Project 2" />
-            </div>
-            <div class="project-info">
-              <h3>Weather App</h3>
-              <p>
+            <div class="project-content">
+              <h3 class="project-title">Weather App</h3>
+              <p class="project-description">
                 A weather application that fetches and displays current weather
                 data using the OpenWeatherMap API. Built with JavaScript and CSS
                 animations.
               </p>
               <div class="project-tech">
-                <span>JavaScript</span>
-                <span>CSS3</span>
-                <span>API</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://mapbytes.vercel.app/"
-                  class="btn small-btn"
-                  target="_blank"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/Balpos07/map"
-                  class="btn small-btn"
-                  target="_blank"
-                  ><i class="fab fa-github"></i> Code</a
-                >
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Stripe</span>
               </div>
             </div>
           </div>
 
           <div class="project-card">
             <div class="project-image">
-              <img src="assets/task.jpeg" alt="Project 3" />
+              <img src="./assets/task.jpeg" alt="Task Management App" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link">Live Demo</a>
+                  <a href="#" class="project-link">Source Code</a>
+                </div>
+              </div>
             </div>
-            <div class="project-info">
-              <h3>Task Manager</h3>
-              <p>
+            <div class="project-content">
+              <h3 class="project-title">Task Management App</h3>
+              <p class="project-description">
                 A task management application with drag-and-drop functionality.
                 Features include task categorization, priority levels, and local
                 storage.
               </p>
               <div class="project-tech">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="http://task-manager-ay.vercel.app/"
-                  class="btn small-btn"
-                  target="_blank"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/Balpos07/task-manager"
-                  class="btn small-btn"
-                  target="_blank"
-                  ><i class="fab fa-github"></i> Code</a
-                >
+                <span class="tech-tag">Vue.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">Socket.io</span>
+                <span class="tech-tag">MongoDB</span>
               </div>
             </div>
           </div>
 
           <div class="project-card">
             <div class="project-image">
-              <img src="assets/calc.jpeg" alt="Project 4" />
+              <img src="./assets/map.png" alt="CalcSite Dashboard" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link">Live Demo</a>
+                  <a href="#" class="project-link">Source Code</a>
+                </div>
+              </div>
             </div>
-            <div class="project-info">
-              <h3>CalcSite</h3>
-              <p>
+            <div class="project-content">
+              <h3 class="project-title">CalcSite Dashboard</h3>
+              <p class="project-description">
                 CalcSite features a responsive interface, support for all basic
                 arithmetic operations, and additional functions like percentage
                 calculations and sign toggling.
               </p>
               <div class="project-tech">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://calcsite.vercel.app/"
-                  class="btn small-btn"
-                  target="_blank"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/Balpos07/posiBytes-Calculator"
-                  class="btn small-btn"
-                  target="_blank"
-                  ><i class="fab fa-github"></i> Code</a
-                >
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">OpenWeather API</span>
+                <span class="tech-tag">Tailwind</span>
               </div>
             </div>
           </div>
@@ -369,218 +222,229 @@
       </div>
     </section>
 
-    <!-- Experience Section (Optional) -->
+    <!-- ...existing code... -->
+
+    <!-- Experience Section -->
     <section id="experience" class="experience">
       <div class="container">
-        <div class="section-header">
-          <h2>Work Experience</h2>
-          <!-- <div class="underline"></div> -->
-        </div>
-        <div class="timeline">
-          <!-- Experience Item 1 -->
-          <div class="timeline-item">
-            <!-- <div class="timeline-dot"></div> -->
-            <div class="timeline-content">
-              <h3>Software Developer</h3>
-              <h4>GEN 128 Business Solutions</h4>
-              <p class="date">Oct 2024 - April 2025</p>
-              <p>
-                Developed and maintained responsive websites using React and
-                modern CSS techniques. Collaborated with UX designers to
-                implement user-friendly interfaces and optimized web
-                performance.
-              </p>
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-grid">
+          <div class="experience-card">
+            <div class="exp-details">
+              <h3 class="exp-role">Frontend Developer</h3>
+              <p class="exp-company">TechCorp Solutions</p>
+              <p class="exp-duration">Jan 2022 – Present</p>
+              <ul class="exp-list">
+                <li>
+                  Developed responsive web apps using React and TypeScript.
+                </li>
+                <li>Collaborated with designers to deliver seamless UI/UX.</li>
+                <li>
+                  Optimized performance and accessibility across platforms.
+                </li>
+              </ul>
             </div>
           </div>
-
-          <!-- Experience Item 2 -->
-          <div class="timeline-item">
-            <!-- <div class="timeline-dot"></div> -->
-            <div class="timeline-content">
-              <h3>Front-End Developer</h3>
-              <h4>FUTA Computer Resource Center</h4>
-              <p class="date">July 2023 - December 2023</p>
-              <p>
-                Built and maintained multiple client websites using HTML, CSS,
-                and JavaScript. Implemented responsive design principles and
-                ensured cross-browser compatibility.
-              </p>
+          <div class="experience-card">
+            <div class="exp-details">
+              <h3 class="exp-role">Full Stack Engineer</h3>
+              <p class="exp-company">Gen128 Business Solutions</p>
+              <p class="exp-duration">Oct 2024 – April 2025</p>
+              <ul class="exp-list">
+                <li>Built scalable APIs with Node.js and Express.</li>
+                <li>Integrated third-party services and payment gateways.</li>
+                <li>Led a team of 3 developers on agile projects.</li>
+              </ul>
             </div>
           </div>
-
-          <!-- Experience Item 3 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Web Development Intern</h3>
-              <h4>Schoolsify Abuja</h4>
-              <p class="date">Jun 2020 - Feb 2021</p>
-              <p>
-                I assisted in building an educational system website in
-                collaboration with a senior developer, enabling users to
-                purchase courses across various tech tracks. Through this
-                project, I gained hands-on experience with React.js and modern
-                web development techniques.
-              </p>
+          <div class="experience-card">
+            <div class="exp-details">
+              <h3 class="exp-role">Front-End Developer</h3>
+              <p class="exp-company">FUTA Computer Resource Center</p>
+              <p class="exp-duration">July 2023 - Dec 2023</p>
+              <ul class="exp-list">
+                <li>Designed wireframes and prototypes in Figma.</li>
+                <li>
+                  Worked closely with developers for pixel-perfect
+                  implementation.
+                </li>
+                <li>Conducted user testing and iterated on feedback.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-card">
+            <div class="exp-details">
+              <h3 class="exp-role">Web Development Intern</h3>
+              <p class="exp-company">Schoolsify Abuja</p>
+              <p class="exp-duration">Jun 2021 - Feb 2023</p>
+              <ul class="exp-list">
+                <li>Designed wireframes and prototypes in Figma.</li>
+                <li>
+                  Worked closely with developers for pixel-perfect
+                  implementation.
+                </li>
+                <li>Conducted user testing and iterated on feedback.</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- ...existing code... -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
-        <div class="section-header">
-          <h2>Get In Touch</h2>
-          <!-- <div class="underline"></div> -->
-        </div>
+        <h2 class="section-title">Get In Touch</h2>
         <div class="contact-content">
           <div class="contact-info">
-            <h3>Let's Connect</h3>
+            <h3>Let's work together!</h3>
             <p>
-              I'm currently available for freelance work and job opportunities.
-              Feel free to reach out if you'd like to discuss a project or
-              position.
+              I'm always interested in hearing about new projects and
+              opportunities. Whether you're a company looking to hire, or you're
+              a fellow developer wanting to collaborate, I'd love to hear from
+              you.
             </p>
-
-            <div class="contact-details">
-              <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <div>
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <div class="contact-details">
                   <h4>Email</h4>
-                  <p>
-                    <a href="mailto:your.email@example.com"
-                      >ayo-posi@outlook.com</a
-                    >
-                  </p>
+                  <p>balpos07@gmail.com</p>
                 </div>
               </div>
-              <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                  <h4>Location</h4>
-                  <p>Ikeja Lagos, Nigeria</p>
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <ion-icon name="call-outline"></ion-icon>
                 </div>
-              </div>
-              <!-- <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <div>
+                <div class="contact-details">
                   <h4>Phone</h4>
-                  <p><a href="tel:+1234567890">+234 9157874468</a></p>
+                  <p>09157874468</p>
                 </div>
-              </div> -->
+              </div>
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <ion-icon name="location-outline"></ion-icon>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>Mabushi, Abuja.</p>
+                </div>
+              </div>
+              <div class="btn">
+                <button></button>
+              </div>
             </div>
-
-            <div class="social-links">
-              <a href="https://github.com/Balpos07" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/balogun-A.-2001aa21a/"
-                target="_blank"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a href="https://x.com/A.Israel" target="_blank"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/media4thegospel/"
-                target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
+          </div>
+          <form class="contact-form">
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Ayomiposi"
+                required
+              />
             </div>
-
-            <a
-              href="https://docs.google.com/document/d/e/2PACX-1vQf47tNdi3aSOtDMfC3kI4_yoPTw-h3-akdjttpsyo8El8jblpH4GLL8pIUi2Sho1tbeVfyWoEhnowj/pub"
-              class="btn primary-btn download-btn"
-              ><i class="fas fa-download"></i> Download CV</a
-            >
-          </div>
-
-          <div class="contact-form">
-            <form id="contactForm">
-              <div class="contact-row" style="display: flex; gap: 10px">
-                <div class="form-group" style="width: 100%">
-                  <label for="name">First Name</label>
-                  <input type="text" id="name" name="name" required />
-                </div>
-                <div class="form-group" style="width: 100%">
-                  <label for="name">Last Name</label>
-                  <input type="text" id="l-name" name="l-name" required />
-                </div>
-              </div>
-              <div class="contact-row" style="display: flex; gap: 10px">
-                <div class="form-group" style="width: 100%">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" required />
-                </div>
-                <div class="form-group" style="width: 100%">
-                  <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" required />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                  style="resize: none"
-                ></textarea>
-              </div>
-              <button type="submit" class="btn primary-btn">
-                Send Message
-              </button>
-            </form>
-          </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div class="footer-logo">
-            <a href="#home">A.</a>
+          <div class="footer-text">
+            <p>&copy; 2024 Ayomiposi. All rights reserved.</p>
           </div>
-          <div class="footer-links">
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-social">
-            <a href="https://github.com/Balpos07" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
+          <div class="social-links">
             <a
-              href="https://www.linkedin.com/in/balogun-A.-2001aa21a/"
-              target="_blank"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a href="https://x.com/A.Israel" target="_blank"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="https://www.instagram.com/media4thegospel/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
+              href="https://www.linkedin.com/in/balogun-ayomiposi-2001aa21a/"
+              class="social-link"
+              >LinkedIn</a
+            >
+            <a href="https://github.com/Balpos07" class="social-link">GitHub</a>
+            <a href="https://x.com/ayomiposiisrael" class="social-link"
+              >Twitter</a
+            >
+            <a
+              href="https://www.instagram.com/media4thegospel/"
+              class="social-link"
+              >Instagram</a
+            >
           </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; <span id="year"></span> A.. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      // Mobile menu toggle
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Add scroll effect to navbar
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
     </script>
-    <script src="script.js"></script>
   </body>
 </html>

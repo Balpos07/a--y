@@ -1,121 +1,84 @@
-// script.js
-
-// Light and Dark Mode Toggle
-const themeToggle = document.querySelector('.theme-toggle');
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
-
-// Check for saved theme in localStorage
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
-    body.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+  body.setAttribute('data-theme', savedTheme);
 }
-
-// Toggle Theme
 themeToggle.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
+  const current = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  body.setAttribute('data-theme', current);
+  localStorage.setItem('theme', current);
 });
 
-// Update Theme Icon
-function updateThemeIcon(theme) {
-    const moonIcon = themeToggle.querySelector('.fa-moon');
-    const sunIcon = themeToggle.querySelector('.fa-sun');
-    if (theme === 'dark') {
-        moonIcon.style.display = 'none';
-        sunIcon.style.display = 'block';
-    } else {
-        moonIcon.style.display = 'block';
-        sunIcon.style.display = 'none';
-    }
-}
-
-// Hamburger Menu Toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
+// Hamburger Menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
 });
-// Smooth Scrolling for Anchor Links
+hamburger.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') navLinks.classList.toggle('active');
+});
+
+// Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Testimonial Slider
-const testimonialItems = document.querySelectorAll('.testimonial-item');
-const testimonialDots = document.querySelectorAll('.testimonial-dots .dot');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-let currentTestimonial = 0;
-
-// Show Testimonial
-function showTestimonial(index) {
-    testimonialItems.forEach((item, i) => {
-        item.style.transform = `translateX(${100 * (i - index)}%)`;
-    });
-    testimonialDots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-    });
-}
-
-// Next Testimonial
-nextBtn.addEventListener('click', () => {
-    currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-    showTestimonial(currentTestimonial);
-});
-
-// Previous Testimonial
-prevBtn.addEventListener('click', () => {
-    currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
-    showTestimonial(currentTestimonial);
-});
-
-// Dot Navigation
-testimonialDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentTestimonial = index;
-        showTestimonial(currentTestimonial);
-    });
-});
-
-// Show First Testimonial Initially
-showTestimonial(currentTestimonial);
-
-// Header Scroll Effect
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+      navLinks.classList.remove('active');
     }
+  });
 });
 
-
+// Animated Hero Text
 const words = ["Ayomiposi", "a Developer", "a Writer", "a Creator"];
 let currentIndex = 0;
-
 function changeText() {
-    const textElement = document.getElementById("changing-text");
-    textElement.style.opacity = '0';
-    
-    setTimeout(() => {
-        textElement.textContent = words[currentIndex];
-        textElement.style.opacity = '1';
-        currentIndex = (currentIndex + 1) % words.length;
-    }, 500);
+  const textElement = document.getElementById("changing-text");
+  textElement.style.opacity = '0';
+  setTimeout(() => {
+    textElement.textContent = words[currentIndex];
+    textElement.style.opacity = '1';
+    currentIndex = (currentIndex + 1) % words.length;
+  }, 400);
 }
-
-changeText();
-
 setInterval(changeText, 2000);
+
+// Typewriter Effect
+const typewriter = document.getElementById('typewriter');
+const typewriterWords = ["Front-End Developer", "React Enthusiast", "UI/UX Explorer", "Web Creator"];
+let twIndex = 0, charIndex = 0, isDeleting = false;
+function type() {
+  let current = typewriterWords[twIndex];
+  if (isDeleting) {
+    typewriter.textContent = current.substring(0, charIndex--);
+    if (charIndex < 0) {
+      isDeleting = false;
+      twIndex = (twIndex + 1) % typewriterWords.length;
+      setTimeout(type, 500);
+    } else setTimeout(type, 40);
+  } else {
+    typewriter.textContent = current.substring(0, charIndex++);
+    if (charIndex > current.length) {
+      isDeleting = true;
+      setTimeout(type, 1200);
+    } else setTimeout(type, 80);
+  }
+}
+type();
+
+// Footer Year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Contact Form (Demo)
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  formMessage.textContent = "Thank you! Your message has been sent.";
+  contactForm.reset();
+  setTimeout(() => { formMessage.textContent = ""; }, 4000);
+});
