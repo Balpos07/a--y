@@ -460,109 +460,173 @@ section {
     font-weight: 500;
 }
 
-/* Projects Section */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
+ /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
 
-.project-card {
-    background: var(--bg-primary);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
-}
+        .project-card {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-xl);
-}
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
 
-.project-image {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-}
+        .project-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
 
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
 
-.project-card:hover .project-image img {
-    transform: scale(1.1);
-}
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
 
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
 
-.project-links {
-    display: flex;
-    gap: 1rem;
-}
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
 
-.project-link {
-    padding: 0.5rem 1rem;
-    background: var(--gradient-primary);
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: transform 0.3s ease;
-}
+        .project-link {
+            padding: 0.5rem 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
 
-.project-link:hover {
-    transform: translateY(-2px);
-}
+        .project-link:hover {
+            transform: translateY(-2px);
+        }
 
-.project-content {
-    padding: 1.5rem;
-}
+        .project-content {
+            padding: 1.5rem;
+        }
 
-.project-title {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
+        .project-title {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
 
-.project-description {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
 
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
 
-.tech-tag {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
+        .tech-tag {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* New button styling */
+        .show-more-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            padding: 2rem 0;
+        }
+        
+        .show-more-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .show-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .show-more-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .show-more-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .show-more-btn.active i {
+            transform: rotate(180deg);
+        }
+        
+        /* Hidden projects */
+        .hidden {
+            display: none;
+        }
+        
+        /* Animation for showing projects */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .projects-grid .project-card.show {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+   
 
 /* Contact Section */
 .contact {

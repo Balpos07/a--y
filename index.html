@@ -137,92 +137,187 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="./assets/calc.jpeg" alt="Weather App" />
-              <div class="project-overlay">
-                <div class="project-links">
-                  <a href="#" class="project-link">Live Demo</a>
-                  <a href="#" class="project-link">Source Code</a>
+      <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Initial visible projects -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div style="background: linear-gradient(135deg, #4f46e5, #818cf8); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weather App</h3>
+                        <p class="project-description">
+                            A weather application that fetches and displays current weather
+                            data using the OpenWeatherMap API. Built with JavaScript and CSS
+                            animations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Weather App</h3>
-              <p class="project-description">
-                A weather application that fetches and displays current weather
-                data using the OpenWeatherMap API. Built with JavaScript and CSS
-                animations.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">Stripe</span>
-              </div>
-            </div>
-          </div>
 
-          <div class="project-card">
-            <div class="project-image">
-              <img src="./assets/task.jpeg" alt="Task Management App" />
-              <div class="project-overlay">
-                <div class="project-links">
-                  <a href="#" class="project-link">Live Demo</a>
-                  <a href="#" class="project-link">Source Code</a>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div style="background: linear-gradient(135deg, #10b981, #34d399); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">
+                            A task management application with drag-and-drop functionality.
+                            Features include task categorization, priority levels, and local
+                            storage.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Task Management App</h3>
-              <p class="project-description">
-                A task management application with drag-and-drop functionality.
-                Features include task categorization, priority levels, and local
-                storage.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">Vue.js</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">Socket.io</span>
-                <span class="tech-tag">MongoDB</span>
-              </div>
-            </div>
-          </div>
 
-          <div class="project-card">
-            <div class="project-image">
-              <img src="./assets/map.png" alt="CalcSite Dashboard" />
-              <div class="project-overlay">
-                <div class="project-links">
-                  <a href="#" class="project-link">Live Demo</a>
-                  <a href="#" class="project-link">Source Code</a>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div style="background: linear-gradient(135deg, #8b5cf6, #c4b5fd); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CalcSite Dashboard</h3>
+                        <p class="project-description">
+                            CalcSite features a responsive interface, support for all basic
+                            arithmetic operations, and additional functions like percentage
+                            calculations and sign toggling.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">OpenWeather API</span>
+                            <span class="tech-tag">Tailwind</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                
+                <!-- Hidden projects that will appear when "Show More" is clicked -->
+                <div class="project-card hidden">
+                    <div class="project-image">
+                        <div style="background: linear-gradient(135deg, #f97316, #fdba74); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <p class="project-description">
+                            A full-featured e-commerce platform with product listings, cart functionality,
+                            and secure payment processing. Includes admin dashboard for inventory management.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card hidden">
+                    <div class="project-image">
+                        <div style="background: linear-gradient(135deg, #0ea5e9, #7dd3fc); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Blogging Platform</h3>
+                        <p class="project-description">
+                            A modern blogging platform with rich text editing, user authentication,
+                            and comment functionality. Features SEO optimization and social sharing.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">GraphQL</span>
+                            <span class="tech-tag">Prisma</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card hidden">
+                    <div class="project-image">
+                        <div style="background: linear-gradient(135deg, #ec4899, #f9a8d4); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Travel Planner</h3>
+                        <p class="project-description">
+                            An interactive travel planning application that helps users discover destinations,
+                            create itineraries, and share travel experiences with the community.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Google Maps API</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="project-content">
-              <h3 class="project-title">CalcSite Dashboard</h3>
-              <p class="project-description">
-                CalcSite features a responsive interface, support for all basic
-                arithmetic operations, and additional functions like percentage
-                calculations and sign toggling.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">Chart.js</span>
-                <span class="tech-tag">OpenWeather API</span>
-                <span class="tech-tag">Tailwind</span>
-              </div>
+            
+            <!-- Show More Button -->
+            <div class="show-more-container">
+                <button id="showMoreBtn" class="show-more-btn">
+                    <span>Show More Projects</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
-          </div>
         </div>
-      </div>
     </section>
-
-    <!-- ...existing code... -->
 
     <!-- Experience Section -->
     <section id="experience" class="experience">
@@ -290,7 +385,6 @@
         </div>
       </div>
     </section>
-    <!-- ...existing code... -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -445,6 +539,40 @@
           navbar.classList.remove("scrolled");
         }
       });
+    </script>
+
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            const hiddenProjects = document.querySelectorAll('.project-card.hidden');
+            let isExpanded = false;
+            
+            showMoreBtn.addEventListener('click', function() {
+                isExpanded = !isExpanded;
+                
+                if (isExpanded) {
+                    // Show hidden projects with animation
+                    hiddenProjects.forEach(project => {
+                        project.classList.remove('hidden');
+                        project.classList.add('show');
+                    });
+                    
+                    // Update button text and icon
+                    showMoreBtn.innerHTML = '<span>Show Less</span> <i class="fas fa-chevron-up"></i>';
+                    showMoreBtn.classList.add('active');
+                } else {
+                    // Hide projects
+                    hiddenProjects.forEach(project => {
+                        project.classList.remove('show');
+                        project.classList.add('hidden');
+                    });
+                    
+                    // Update button text and icon
+                    showMoreBtn.innerHTML = '<span>Show More Projects</span> <i class="fas fa-chevron-down"></i>';
+                    showMoreBtn.classList.remove('active');
+                }
+            });
+        });
     </script>
   </body>
 </html>
