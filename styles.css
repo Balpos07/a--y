@@ -179,6 +179,7 @@ p {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1002;
 }
 
 .hamburger .bar {
@@ -792,9 +793,10 @@ section {
         background-color: var(--bg-primary);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: 0.3s ease;
         box-shadow: var(--shadow-lg);
         padding: 2rem 0;
+        z-index: 1001;
     }
 
     .nav-menu.active {
@@ -953,6 +955,13 @@ section {
     .form-group input,
     .form-group textarea {
         font-size: 16px;
+        width: 100%;
+    }
+
+    .contact-form button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.8rem;
     }
 }
 
