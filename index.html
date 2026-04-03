@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayomiposi - Portfolio</title>
+  <title>Ayomiposi - Full Stack Developer & UI/UX Designer</title>
+  <meta name="description" content="Full-stack developer specializing in React, Node.js, and UI/UX design. Check out my portfolio of professional projects." />
+  <meta property="og:title" content="Ayomiposi - Full Stack Developer Portfolio" />
+  <meta property="og:description" content="Explore my projects built with React, Node.js, and modern web technologies." />
+  <meta property="og:image" content="./assets/ayo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#667eea" />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -32,6 +38,9 @@
           <a href="#contact" class="nav-link">Contact</a>
         </li>
       </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <ion-icon name="moon-outline"></ion-icon>
+      </button>
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -55,11 +64,12 @@
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">View My Work</a>
           <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          <a href="./assets/Ayo Balogun CV.pdf" download="Ayo Balogun CV.pdf" class="btn btn-primary" style="background: var(--accent-color);">Download Resume</a>
         </div>
       </div>
       <div class="hero-image">
         <div class="hero-avatar">
-          <img src="./assets/ayo.jpg" alt="Ayomiposi" />
+          <img src="./assets/ayo.jpg" alt="Ayomiposi" loading="lazy" />
         </div>
       </div>
     </div>
@@ -73,7 +83,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about">
+  <section id="about" class="about" data-animate="true">
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
@@ -130,12 +140,12 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects">
+  <section id="projects" class="projects" data-animate="true">
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
         <!-- Initial visible projects -->
-        <div class="project-card">
+        <div class="project-card" data-case-study="weatherapp" style="cursor: pointer;">
           <div class="project-image">
             <div
               style="background: url('./assets/map.png'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
@@ -158,18 +168,12 @@
             <div class="project-tech">
               <span class="tech-tag">React</span>
               <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Stripe</span>
             </div>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-case-study="taskmanager" style="cursor: pointer;">
           <div class="project-image">
-            <div
-              style="background: url('./assets/task.jpeg'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-              <i class="fas fa-tasks"></i>
-            </div>
             <div class="project-overlay">
               <div class="project-links">
                 <a href="http://task-manager-ay.vercel.app/" class="project-link">Live Demo</a>
@@ -193,7 +197,7 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-case-study="calculator" style="cursor: pointer;">
           <div class="project-image">
             <div
               style="background: url('./assets/calc.jpeg'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
@@ -201,7 +205,7 @@
             </div>
             <div class="project-overlay">
               <div class="project-links">
-                <a href="https://calcsite.vercel.app/" class="project-link">Live Demo</a>
+                <a href="https://posibytes-calculator.vercel.app/" class="project-link">Live Demo</a>
                 <a href="https://github.com/Balpos07/posiBytes-Calculator" class="project-link">Source Code</a>
               </div>
             </div>
@@ -222,8 +226,8 @@
           </div>
         </div>
 
-        <!-- Hidden projects that will appear when "Show More" is clicked -->
-        <div class="project-card hidden">
+        <!-- E-commerce project card (hidden by default) -->
+        <div class="project-card hidden" data-case-study="ecommerce" style="cursor: pointer;">
           <div class="project-image">
             <div
               style="background: linear-gradient(135deg, #f97316, #fdba74); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
@@ -250,6 +254,19 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Show More Button -->
+      <div class="show-more-container">
+        <button id="showMoreBtn" class="show-more-btn">
+          <span>Show More Projects</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
 
         <!-- <div class="project-card hidden">
                     <div class="project-image">
@@ -304,14 +321,6 @@
                         </div>
                     </div>
                 </div> -->
-      </div>
-
-      <!-- Show More Button -->
-      <div class="show-more-container">
-        <button id="showMoreBtn" class="show-more-btn">
-          <span>Show More Projects</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
       </div>
     </div>
   </section>
@@ -407,8 +416,61 @@
     </div>
   </section>
 
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials" data-animate="true">
+    <div class="container">
+      <h2 class="section-title">What People Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Ayomiposi delivered exceptional work on our farm support platform. Their attention to detail and problem-solving skills made a real difference."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <h4>David Okonkwo</h4>
+              <p>Project Lead, Kwezi Technologies</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Working with Ayomiposi on our e-commerce platform was seamless. They have strong technical skills and great communication."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <h4>Sarah Adeyemi</h4>
+              <p>CEO, Gen128 Business Solutions</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Ayomiposi's dashboard design was modern, responsive, and exactly what we needed. Highly recommended for any project."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <h4>Michael Chen</h4>
+              <p>Product Manager, Tech Startup</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
-  <section id="contact" class="contact">
+  <section id="contact" class="contact" data-animate="true">
     <div class="container">
       <h2 class="section-title">Get In Touch</h2>
       <div class="contact-content">
@@ -421,7 +483,7 @@
             you.
           </p>
           <div class="contact-methods">
-            <div class="contact-method">
+            <a href="mailto:balpos07@gmail.com" class="contact-method" style="text-decoration: none; color: inherit;">
               <div class="contact-icon">
                 <ion-icon name="mail-outline"></ion-icon>
               </div>
@@ -429,8 +491,8 @@
                 <h4>Email</h4>
                 <p>balpos07@gmail.com</p>
               </div>
-            </div>
-            <div class="contact-method">
+            </a>
+            <a href="https://wa.me/2349157874468?text=Hi%20Ayomiposi%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20opportunity." class="contact-method" style="text-decoration: none; color: inherit;" target="_blank">
               <div class="contact-icon">
                 <ion-icon name="call-outline"></ion-icon>
               </div>
@@ -438,7 +500,7 @@
                 <h4>Phone</h4>
                 <p>09157874468</p>
               </div>
-            </div>
+            </a>
             <div class="contact-method">
               <div class="contact-icon">
                 <ion-icon name="location-outline"></ion-icon>
@@ -448,14 +510,11 @@
                 <p>Mabushi, Abuja.</p>
               </div>
             </div>
-            <div class="btn">
-              <button></button>
-            </div>
           </div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
           <div class="form-group">
-            <input type="text" id="name" name="name" placeholder="Ayomiposi" required />
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
           </div>
           <div class="form-group">
             <input type="email" id="email" name="email" placeholder="Your Email" required />
@@ -467,17 +526,16 @@
             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Send Message</button>
+          <div id="formMessage" class="form-message"></div>
         </form>
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-text">
-          <p>&copy; 2024 Ayomiposi. All rights reserved.</p>
+          <p>&copy; 2026 Ayomiposi. All rights reserved.</p>
         </div>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/balogun-ayomiposi-2001aa21a/" class="social-link">LinkedIn</a>
@@ -490,9 +548,55 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
+    document.addEventListener('DOMContentLoaded', function () {
+      const showMoreBtn = document.getElementById('showMoreBtn');
+      const hiddenProjects = document.querySelectorAll('.project-card.hidden');
+      let isExpanded = false;
+
+      showMoreBtn.addEventListener('click', function () {
+        isExpanded = !isExpanded;
+
+        if (isExpanded) {
+          // Show hidden projects with animation
+          hiddenProjects.forEach(project => {
+            project.classList.remove('hidden');
+            project.classList.add('show');
+          });
+
+          // Update button text and icon
+          showMoreBtn.innerHTML = '<span>Show Less</span> <i class="fas fa-chevron-up"></i>';
+          showMoreBtn.classList.add('active');
+        } else {
+          // Hide projects
+          hiddenProjects.forEach(project => {
+            project.classList.remove('show');
+            project.classList.add('hidden');
+          });
+
+          // Update button text and icon
+          showMoreBtn.innerHTML = '<span>Show More Projects</span> <i class="fas fa-chevron-down"></i>';
+          showMoreBtn.classList.remove('active');
+        }
+      });
+    });
+  </script>
+
+  <!-- Project Case Study Modal -->
+  <div id="caseStudyModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="case-study-container">
+        <h2 id="modalTitle"></h2>
+        <div id="modalBody"></div>
+        <div class="modal-footer">
+          <a id="modalLiveLink" href="#" class="btn btn-primary" target="_blank">View Live</a>
+          <a id="modalGithubLink" href="#" class="btn btn-secondary" target="_blank">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
 
     hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("active");
@@ -528,39 +632,6 @@
     });
   </script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const showMoreBtn = document.getElementById('showMoreBtn');
-      const hiddenProjects = document.querySelectorAll('.project-card.hidden');
-      let isExpanded = false;
-
-      showMoreBtn.addEventListener('click', function () {
-        isExpanded = !isExpanded;
-
-        if (isExpanded) {
-          // Show hidden projects with animation
-          hiddenProjects.forEach(project => {
-            project.classList.remove('hidden');
-            project.classList.add('show');
-          });
-
-          // Update button text and icon
-          showMoreBtn.innerHTML = '<span>Show Less</span> <i class="fas fa-chevron-up"></i>';
-          showMoreBtn.classList.add('active');
-        } else {
-          // Hide projects
-          hiddenProjects.forEach(project => {
-            project.classList.remove('show');
-            project.classList.add('hidden');
-          });
-
-          // Update button text and icon
-          showMoreBtn.innerHTML = '<span>Show More Projects</span> <i class="fas fa-chevron-down"></i>';
-          showMoreBtn.classList.remove('active');
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>
