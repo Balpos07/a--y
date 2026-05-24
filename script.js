@@ -187,21 +187,85 @@ function initShowMore() {
   const hiddenProjects = document.querySelectorAll('.project-card.hidden');
   if (!showMoreBtn) return;
 
+  const projectsGrid = document.querySelector('.projects-grid');
   let isExpanded = false;
+  let appendedClones = [];
+
   showMoreBtn.addEventListener('click', function () {
     isExpanded = !isExpanded;
     if (isExpanded) {
+      // reveal any hidden projects
       hiddenProjects.forEach(project => {
         project.classList.remove('hidden');
         project.classList.add('show');
       });
+
+      // create two distinct project cards (so you can edit them later)
+      if (projectsGrid) {
+        const newProjectsData = [
+          {
+            key: 'blogging',
+            title: 'Blogging Platform',
+            description: 'A modern blogging platform with rich text editing, user authentication, and SEO-friendly features.',
+            liveLink: '#',
+            githubLink: '#',
+            tech: ['Next.js', 'GraphQL', 'Prisma', 'PostgreSQL'],
+            bgStyle: 'linear-gradient(135deg, #0ea5e9, #7dd3fc)'
+          },
+          {
+            key: 'travel',
+            title: 'Travel Planner',
+            description: 'Interactive travel planning app that helps users discover destinations and create itineraries.',
+            liveLink: '#',
+            githubLink: '#',
+            tech: ['Vue.js', 'Firebase', 'Google Maps API', 'Tailwind CSS'],
+            bgStyle: 'linear-gradient(135deg, #ec4899, #f9a8d4)'
+          }
+        ];
+
+        newProjectsData.forEach(data => {
+          const card = document.createElement('div');
+          card.className = 'project-card';
+          card.setAttribute('data-case-study', data.key);
+          card.style.cursor = 'pointer';
+          card.innerHTML = `
+            <div class="project-image">
+              <div style="background: ${data.bgStyle}; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                <i class="fas fa-blog"></i>
+              </div>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="${data.liveLink}" class="project-link">Live Demo</a>
+                  <a href="${data.githubLink}" class="project-link">Source Code</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">${data.title}</h3>
+              <p class="project-description">${data.description}</p>
+              <div class="project-tech">
+                ${data.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+              </div>
+            </div>`;
+
+          projectsGrid.appendChild(card);
+          appendedClones.push(card);
+        });
+      }
+
       showMoreBtn.innerHTML = '<span>Show Less</span> <i class="fas fa-chevron-up"></i>';
       showMoreBtn.classList.add('active');
     } else {
+      // hide projects again
       hiddenProjects.forEach(project => {
         project.classList.remove('show');
         project.classList.add('hidden');
       });
+
+      // remove appended clones
+      appendedClones.forEach(c => c.remove());
+      appendedClones = [];
+
       showMoreBtn.innerHTML = '<span>Show More Projects</span> <i class="fas fa-chevron-down"></i>';
       showMoreBtn.classList.remove('active');
     }
@@ -256,7 +320,7 @@ function initModal() {
       githubLink: 'https://github.com/Balpos07/posiBytes-Calculator'
     },
     ecommerce: {
-      title: 'E-commerce Platform',
+      title: 'Greenland Farm',
       description: `<h3>Challenge</h3>
         <p>Develop a full-featured e-commerce platform with product management and secure payments.</p>
         <h3>Solution</h3>
@@ -267,6 +331,29 @@ function initModal() {
         <p>React, Redux, Node.js, MongoDB, Stripe</p>`,
       liveLink: 'https://greenlandfarms.vercel.app/',
       githubLink: 'https://github.com/Balpos07/green-bush'
+    }
+    ,
+    blogging: {
+      title: 'Blogging Platform',
+      description: `<h3>Challenge</h3>
+        <p>Create a modern blogging platform with rich text editing and user auth.</p>
+        <h3>Solution</h3>
+        <p>Built a platform supporting posts, comments, and SEO optimizations with an intuitive editor.</p>
+        <h3>Technologies</h3>
+        <p>Next.js, GraphQL, Prisma, PostgreSQL</p>`,
+      liveLink: '#',
+      githubLink: '#'
+    },
+    travel: {
+      title: 'Travel Planner',
+      description: `<h3>Challenge</h3>
+        <p>Help users discover destinations and create itineraries easily.</p>
+        <h3>Solution</h3>
+        <p>Interactive planner with maps, saving itineraries, and sharing features.</p>
+        <h3>Technologies</h3>
+        <p>Vue.js, Firebase, Google Maps API, Tailwind CSS</p>`,
+      liveLink: '#',
+      githubLink: '#'
     }
   };
 
