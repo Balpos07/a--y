@@ -58,27 +58,23 @@
     <div class="hero-container">
       <div class="hero-content">
         <h1 class="hero-title">
-          Hi, I'm <span class="gradient-text">Ayomiposi</span>
+          Hi, I'm <span class="gradient-text">Ayomiposi</span> — I build delightful web apps
         </h1>
         <p class="hero-subtitle">Full Stack Developer & UI/UX Designer • <span id="typewriter" aria-hidden="true"></span></p>
         <span id="changing-text" style="display:none" aria-hidden="true"></span>
         <p class="hero-description">
-          I create beautiful, functional, and user-centered digital
-          experiences that solve real-world problems.
+          I design and build responsive, accessible web applications focused on measurable outcomes.
         </p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-          <a href="./assets/Ayo Balogun CV.pdf" download="Ayo Balogun CV.pdf" class="btn btn-primary" style="background: var(--accent-color);">Download Resume</a>
+          <a href="#projects" class="btn btn-primary" aria-label="View projects">View My Work</a>
+          <a href="#contact" class="btn btn-secondary" aria-label="Contact">Get In Touch</a>
+          <a href="./assets/Ayo Balogun CV.pdf" download="Ayo Balogun CV.pdf" class="btn btn-primary" style="background: var(--accent-color);" aria-label="Download resume">Download Resume</a>
         </div>
       </div>
       <div class="hero-image">
-        <div class="hero-avatar" data-parallax data-depth="0.18">
-            <picture>
-              <source srcset="./assets/ayo.jpg" type="image/webp">
-              <img src="./assets/ayo.jpg" alt="Ayomiposi" loading="eager" decoding="sync" width="300" height="300">
-            </picture>
-          </div>
+        <div class="hero-avatar">
+          <img src="./assets/ayo.jpg" alt="Ayomiposi" loading="lazy" />
+        </div>
       </div>
     </div>
     <div class="hero-background" data-parallax data-depth="0.06">
@@ -153,8 +149,9 @@
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
         <!-- Initial visible projects -->
-        <div class="project-card" data-case-study="weatherapp" style="cursor: pointer;">
+        <div class="project-card" data-case-study="weatherapp" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Weather App case study">
           <div class="project-image">
+            <img data-src="./assets/map.png" alt="Weather App screenshot" class="project-thumb" />
             <div
               style="background: url('./assets/map.png'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
               <i class="fas fa-cloud-sun"></i>
@@ -180,8 +177,9 @@
           </div>
         </div>
 
-        <div class="project-card" data-case-study="taskmanager" style="cursor: pointer;">
+        <div class="project-card" data-case-study="taskmanager" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Task Manager case study">
           <div class="project-image">
+            <img data-src="./assets/task.png" alt="Task Manager screenshot" class="project-thumb" />
             <div class="project-overlay">
               <div class="project-links">
                 <a href="http://task-manager-ay.vercel.app/" class="project-link">Live Demo</a>
@@ -205,8 +203,9 @@
           </div>
         </div>
 
-        <div class="project-card" data-case-study="calculator" style="cursor: pointer;">
+        <div class="project-card" data-case-study="calculator" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Calculator case study">
           <div class="project-image">
+            <img data-src="./assets/calc.jpeg" alt="Calculator screenshot" class="project-thumb" />
             <div
               style="background: url('./assets/calc.jpeg'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
               <i class="fas fa-calculator"></i>
@@ -235,10 +234,11 @@
         </div>
 
         <!-- E-commerce project card (hidden by default) -->
-        <div class="project-card hidden" data-case-study="ecommerce" style="cursor: pointer;">
+        <div class="project-card hidden" data-case-study="ecommerce" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open E-commerce case study">
           <div class="project-image">
+            <img data-src="./assets/green.png" alt="E-commerce screenshot" class="project-thumb" />
             <div
-              style="background: linear-gradient(135deg, #f97316, #fdba74); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+              style="background: url('./assets/green.png'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
               <i class="fas fa-shopping-cart"></i>
             </div>
             <div class="project-overlay">
@@ -249,7 +249,7 @@
             </div>
           </div>
           <div class="project-content">
-            <h3 class="project-title">E-commerce Platform</h3>
+            <h3 class="project-title">Greenland Farms</h3>
             <p class="project-description">
               A full-featured e-commerce platform with product listings, cart functionality,
               and secure payment processing. Includes admin dashboard for inventory management.
@@ -266,7 +266,7 @@
 
       <!-- Show More Button -->
       <div class="show-more-container">
-        <button id="showMoreBtn" class="show-more-btn" aria-expanded="false">
+        <button id="showMoreBtn" class="show-more-btn">
           <span>Show More Projects</span>
           <i class="fas fa-chevron-down"></i>
         </button>
@@ -572,7 +572,7 @@
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
