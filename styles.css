@@ -915,6 +915,45 @@ section { padding: 80px 0; }
     transform: translateY(0);
 }
 
+/* Parallax layers - GPU accelerated transforms */
+[data-parallax] {
+    will-change: transform;
+    transform: translate3d(0,0,0);
+}
+
+/* Button microinteraction: subtle sliding accent */
+.btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.35));
+    transition: width 0.35s ease;
+}
+.btn:hover::after { width: 100%; }
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Ripple effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    transform: scale(0);
+    pointer-events: none;
+    animation: ripple 650ms ease-out;
+    will-change: transform, opacity;
+}
+
+@keyframes ripple {
+    to { transform: scale(4); opacity: 0; }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg-secondary); }

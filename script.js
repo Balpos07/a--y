@@ -7,6 +7,8 @@ function initializeApp() {
   initScrollAnimations();
   initModal();
   initLazyLoading();
+  initParallax();
+  initButtonRipples();
   initShowMore();
 }
 
@@ -25,13 +27,19 @@ function initThemeToggle() {
     }
   }
 
+  function updateThemePressed(theme) {
+    themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+  }
+
   updateThemeIcon(savedTheme);
+  updateThemePressed(savedTheme);
 
   themeToggle.addEventListener('click', () => {
     const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', current);
     localStorage.setItem('theme', current);
     updateThemeIcon(current);
+    updateThemePressed(current);
   });
 }
 
@@ -197,6 +205,7 @@ function initShowMore() {
       });
       showMoreBtn.innerHTML = '<span>Show Less</span> <i class="fas fa-chevron-up"></i>';
       showMoreBtn.classList.add('active');
+      showMoreBtn.setAttribute('aria-expanded', 'true');
     } else {
       hiddenProjects.forEach(project => {
         project.classList.remove('show');
@@ -204,6 +213,7 @@ function initShowMore() {
       });
       showMoreBtn.innerHTML = '<span>Show More Projects</span> <i class="fas fa-chevron-down"></i>';
       showMoreBtn.classList.remove('active');
+      showMoreBtn.setAttribute('aria-expanded', 'false');
     }
   });
 }
@@ -270,6 +280,7 @@ function initModal() {
     }
   };
 
+  let lastFocusedEl = null;
   projectCards.forEach(card => {
     card.addEventListener('click', (e) => {
       // Don't open modal if user clicked a link inside the card
@@ -281,8 +292,11 @@ function initModal() {
         document.getElementById('modalBody').innerHTML = study.description;
         document.getElementById('modalLiveLink').href = study.liveLink;
         document.getElementById('modalGithubLink').href = study.githubLink;
+        lastFocusedEl = document.activeElement;
         caseStudyModal.style.display = 'block';
+        caseStudyModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        if (modalClose) modalClose.focus();
       }
     });
   });
@@ -290,6 +304,8 @@ function initModal() {
   function closeModal() {
     caseStudyModal.style.display = 'none';
     document.body.style.overflow = '';
+    caseStudyModal.setAttribute('aria-hidden', 'true');
+    if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') lastFocusedEl.focus();
   }
 
   modalClose.addEventListener('click', closeModal);
@@ -317,6 +333,48 @@ function initLazyLoading() {
     });
   });
   document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+}
+
+// ========== PARALLAX (lightweight, respects reduced-motion) ==========
+function initParallax() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const layers = document.querySelectorAll('[data-parallax]');
+  if (!layers.length) return;
+  let ticking = false;
+  function update() {
+    const center = window.innerHeight / 2;
+    layers.forEach(el => {
+      const depth = parseFloat(el.getAttribute('data-depth')) || 0.08;
+      const rect = el.getBoundingClientRect();
+      const offset = (rect.top - center) * -depth;
+      el.style.transform = `translate3d(0, ${offset}px, 0)`;
+    });
+  }
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => { update(); ticking = false; });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  update();
+}
+
+// ========== BUTTON RIPPLE MICROINTERACTIONS ==========
+function initButtonRipples() {
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      const rect = this.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      const size = Math.max(rect.width, rect.height) * 1.2;
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      this.appendChild(ripple);
+      setTimeout(() => { ripple.remove(); }, 650);
+    });
+  });
 }
 
 // ========== FOOTER YEAR ==========
