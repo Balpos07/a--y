@@ -13,10 +13,6 @@
   <meta name="theme-color" content="#667eea" />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="./assets/ayo.jpg" as="image">
-  <link rel="preload" href="script.js" as="script">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -28,7 +24,7 @@
       <div class="nav-logo">
         <h2>A.</h2>
       </div>
-      <ul class="nav-menu" role="menubar">
+      <ul class="nav-menu">
         <li class="nav-item">
           <a href="#home" class="nav-link">Home</a>
         </li>
@@ -42,7 +38,7 @@
           <a href="#contact" class="nav-link">Contact</a>
         </li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
         <ion-icon name="moon-outline"></ion-icon>
       </button>
       <div class="hamburger">
@@ -60,8 +56,7 @@
         <h1 class="hero-title">
           Hi, I'm <span class="gradient-text">Ayomiposi</span> — I build delightful web apps
         </h1>
-        <p class="hero-subtitle">Full Stack Developer & UI/UX Designer • <span id="typewriter" aria-hidden="true"></span></p>
-        <span id="changing-text" style="display:none" aria-hidden="true"></span>
+        <p class="hero-subtitle">Full Stack Developer & UI/UX Designer</p>
         <p class="hero-description">
           I design and build responsive, accessible web applications focused on measurable outcomes.
         </p>
@@ -72,12 +67,12 @@
         </div>
       </div>
       <div class="hero-image">
-        <div class="hero-avatar">
-          <img src="./assets/ayo.jpg" alt="Ayomiposi" loading="lazy" />
+          <div class="hero-avatar">
+          <img src="./assets/ayo.jpg" alt="Ayomiposi portrait" loading="lazy" />
         </div>
       </div>
     </div>
-    <div class="hero-background" data-parallax data-depth="0.06">
+    <div class="hero-background">
       <div class="floating-shapes">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
@@ -266,7 +261,7 @@
 
       <!-- Show More Button -->
       <div class="show-more-container">
-        <button id="showMoreBtn" class="show-more-btn">
+        <button id="showMoreBtn" class="show-more-btn" aria-expanded="false" aria-controls="projects" aria-label="Show more projects">
           <span>Show More Projects</span>
           <i class="fas fa-chevron-down"></i>
         </button>
@@ -555,11 +550,43 @@
     </div>
   </footer>
 
-    
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const showMoreBtn = document.getElementById('showMoreBtn');
+      const hiddenProjects = document.querySelectorAll('.project-card.hidden');
+      let isExpanded = false;
+
+      showMoreBtn.addEventListener('click', function () {
+        isExpanded = !isExpanded;
+
+        if (isExpanded) {
+          // Show hidden projects with animation
+          hiddenProjects.forEach(project => {
+            project.classList.remove('hidden');
+            project.classList.add('show');
+          });
+
+          // Update button text and icon
+          showMoreBtn.innerHTML = '<span>Show Less</span> <i class="fas fa-chevron-up"></i>';
+          showMoreBtn.classList.add('active');
+        } else {
+          // Hide projects
+          hiddenProjects.forEach(project => {
+            project.classList.remove('show');
+            project.classList.add('hidden');
+          });
+
+          // Update button text and icon
+          showMoreBtn.innerHTML = '<span>Show More Projects</span> <i class="fas fa-chevron-down"></i>';
+          showMoreBtn.classList.remove('active');
+        }
+      });
+    });
+  </script>
 
   <!-- Project Case Study Modal -->
-  <div id="caseStudyModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
-    <div class="modal-content" role="document">
+  <div id="caseStudyModal" class="modal">
+    <div class="modal-content">
       <span class="modal-close">&times;</span>
       <div class="case-study-container">
         <h2 id="modalTitle"></h2>
@@ -573,6 +600,8 @@
   </div>
 
   <script src="script.js"></script>
+  <!-- Analytics: replace data-domain with your domain or remove if not using Plausible -->
+  <script async defer data-domain="yourdomain.com" src="https://plausible.io/js/plausible.js"></script>
 </body>
 
 </html>
