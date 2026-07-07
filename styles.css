@@ -1,5 +1,3 @@
-
-
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -22,16 +20,12 @@
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.05);
-  --gradient-primary: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  --gradient-accent: linear-gradient(
-    135deg,
-    var(--accent-color),
-    var(--primary-color)
-  );
+  --gradient-primary: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
+  --gradient-accent: linear-gradient(135deg,
+      var(--accent-color),
+      var(--primary-color));
 }
 
 /* ========== DARK MODE — applied to <html> ========== */
@@ -174,10 +168,12 @@ h1 {
   font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
   letter-spacing: -0.02em;
 }
+
 h2 {
   font-size: clamp(2rem, 4vw + 1rem, 3rem);
   letter-spacing: -0.01em;
 }
+
 h3 {
   font-size: clamp(1.2rem, 2vw + 1rem, 1.5rem);
 }
@@ -464,6 +460,7 @@ p {
   left: 10%;
   animation-delay: 0s;
 }
+
 .shape-2 {
   width: 150px;
   height: 150px;
@@ -471,6 +468,7 @@ p {
   right: 10%;
   animation-delay: 2s;
 }
+
 .shape-3 {
   width: 80px;
   height: 80px;
@@ -480,10 +478,12 @@ p {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -494,6 +494,7 @@ p {
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -505,6 +506,7 @@ p {
     opacity: 0;
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -742,6 +744,7 @@ section {
 .show-more-btn i {
   transition: transform 0.3s ease;
 }
+
 .show-more-btn.active i {
   transform: rotate(180deg);
 }
@@ -755,6 +758,7 @@ section {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1034,10 +1038,12 @@ section {
   margin-bottom: 1.5rem;
   color: var(--primary-color);
 }
+
 .case-study-container h3 {
   color: var(--primary-color);
   margin-top: 1rem;
 }
+
 .case-study-container p {
   line-height: 1.8;
 }
@@ -1060,6 +1066,7 @@ section {
     opacity: 0;
     transform: translateY(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1094,19 +1101,19 @@ section {
   bottom: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0.35)
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.35));
   transition: width 0.35s ease;
 }
+
 .btn:hover::after {
   width: 100%;
 }
 
 /* Respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -1137,13 +1144,16 @@ section {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-secondary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--gradient-primary);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color);
 }
@@ -1167,12 +1177,14 @@ textarea:focus {
     flex-direction: column;
     align-items: center;
   }
+
   .experience-card {
     max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
+
   /* Hamburger visible */
   .hamburger {
     display: flex;
@@ -1197,6 +1209,7 @@ textarea:focus {
   .nav-menu.active {
     left: 0;
   }
+
   .nav-menu li {
     margin: 0.75rem 0;
   }
@@ -1212,9 +1225,11 @@ textarea:focus {
   .hero-title {
     font-size: 2.4rem;
   }
+
   .hero-description {
     margin: 0 auto 2rem;
   }
+
   .hero-buttons {
     justify-content: center;
   }
@@ -1266,6 +1281,7 @@ textarea:focus {
     flex-direction: column;
     text-align: center;
   }
+
   .social-links {
     justify-content: center;
   }
@@ -1280,6 +1296,7 @@ textarea:focus {
   .modal-footer {
     flex-direction: column;
   }
+
   .modal-footer .btn {
     width: 100%;
   }
@@ -1335,7 +1352,8 @@ textarea:focus {
 
   .form-group input,
   .form-group textarea {
-    font-size: 16px; /* prevent zoom on iOS */
+    font-size: 16px;
+    /* prevent zoom on iOS */
   }
 
   .theme-toggle {
@@ -1347,20 +1365,24 @@ textarea:focus {
 
 /* Print */
 @media print {
+
   .navbar,
   .hero-background,
   .floating-shapes,
   .project-overlay {
     display: none;
   }
+
   body {
     font-size: 12pt;
     line-height: 1.4;
   }
+
   .hero {
     min-height: auto;
     padding: 2rem 0;
   }
+
   section {
     padding: 1rem 0;
     page-break-inside: avoid;
@@ -1373,7 +1395,13 @@ body {
 }
 
 @media (pointer: fine) {
-  body, a, button, .btn, .project-card, .show-more-btn {
+
+  body,
+  a,
+  button,
+  .btn,
+  .project-card,
+  .show-more-btn {
     cursor: none !important;
   }
 }
