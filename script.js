@@ -10,6 +10,7 @@ function initializeApp() {
   initParallax();
   initButtonRipples();
   initShowMore();
+  initCustomCursor();
 }
 
 // ========== DARK MODE TOGGLE ==========
@@ -513,4 +514,44 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initializeApp);
 } else {
   initializeApp();
+}
+
+// ========== CUSTOM CURSOR ==========
+function initCustomCursor() {
+  const cursor = document.getElementById('customCursor');
+  if (!cursor || window.matchMedia("(pointer: coarse)").matches) return;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  const updateCursor = () => {
+    // Smooth follow
+    cursorX += (mouseX - cursorX) * 0.2;
+    cursorY += (mouseY - cursorY) * 0.2;
+    
+    cursor.style.left = `${cursorX}px`;
+    cursor.style.top = `${cursorY}px`;
+    
+    requestAnimationFrame(updateCursor);
+  };
+  requestAnimationFrame(updateCursor);
+
+  // Add hover effect for interactive elements
+  const interactiveElements = document.querySelectorAll('a, button, .btn, .project-card, .show-more-btn');
+  
+  interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('hover');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('hover');
+    });
+  });
 }

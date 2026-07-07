@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
 
 /* Reset and Base Styles */
 * {
@@ -8,20 +8,20 @@
 }
 
 :root {
-  --primary-color: #667eea;
-  --secondary-color: #764ba2;
-  --accent-color: #f093fb;
-  --text-primary: #1a202c;
-  --text-secondary: #4a5568;
-  --text-light: #718096;
-  --bg-primary: #f8f8f8;
-  --bg-secondary: #f7fafc;
-  --bg-dark: #1a202c;
-  --border-color: #e2e8f0;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --primary-color: #4f46e5;
+  --secondary-color: #7c3aed;
+  --accent-color: #ec4899;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-light: #9ca3af;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-dark: #111827;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.05);
   --gradient-primary: linear-gradient(
     135deg,
     var(--primary-color),
@@ -36,20 +36,20 @@
 
 /* ========== DARK MODE — applied to <html> ========== */
 [data-theme="dark"] {
-  --primary-color: #7b9fff;
-  --secondary-color: #4a7fc1;
-  --accent-color: #a78bfa;
-  --text-primary: #e2eaf8;
-  --text-secondary: #94aac8;
-  --text-light: #6b809e;
-  --bg-primary: #0d1b2e;
-  --bg-secondary: #122240;
-  --bg-dark: #071221;
-  --border-color: #1e3352;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5);
+  --primary-color: #818cf8;
+  --secondary-color: #a78bfa;
+  --accent-color: #f472b6;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-light: #9ca3af;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #121212;
+  --bg-dark: #000000;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.8);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.8);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.8);
 }
 
 [data-theme="dark"] .hero {
@@ -57,12 +57,14 @@
 }
 
 [data-theme="dark"] .navbar {
-  background: rgba(13, 27, 46, 0.97);
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--border-color);
 }
 
 [data-theme="dark"] .navbar.scrolled {
-  background: rgba(13, 27, 46, 0.99);
+  background: rgba(10, 10, 10, 0.85);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
@@ -71,8 +73,11 @@
 }
 
 [data-theme="dark"] .experience-card {
-  background: var(--bg-primary);
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 [data-theme="dark"] .exp-role {
@@ -120,7 +125,10 @@
 }
 
 [data-theme="dark"] .project-card {
-  background: var(--bg-secondary);
+  background: rgba(18, 18, 18, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 [data-theme="dark"] .footer {
@@ -134,7 +142,7 @@ html {
 }
 
 body {
-  font-family: "Fredoka", sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
@@ -163,13 +171,15 @@ h6 {
 }
 
 h1 {
-  font-size: 2.7rem;
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+  letter-spacing: -0.02em;
 }
 h2 {
-  font-size: 2.2rem;
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  letter-spacing: -0.01em;
 }
 h3 {
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 2vw + 1rem, 1.5rem);
 }
 
 p {
@@ -220,16 +230,16 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
   transition: all 0.3s ease;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.99);
+  background: rgba(255, 255, 255, 0.85);
   border-bottom-color: var(--border-color);
   box-shadow: var(--shadow-sm);
 }
@@ -607,11 +617,14 @@ section {
 .project-card {
   flex: 1 1 calc(33.333% - 1.35rem);
   min-width: 280px;
-  background: var(--bg-primary);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .project-card:hover {
@@ -769,7 +782,10 @@ section {
 }
 
 .experience-card {
-  background: var(--bg-primary);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 16px;
   box-shadow: var(--shadow-md);
   display: flex;
@@ -1348,5 +1364,44 @@ textarea:focus {
   section {
     padding: 1rem 0;
     page-break-inside: avoid;
+  }
+}
+
+/* ========== CUSTOM CURSOR ========== */
+body {
+  /* hide default cursor on desktop, but keep on mobile */
+}
+
+@media (pointer: fine) {
+  body, a, button, .btn, .project-card, .show-more-btn {
+    cursor: none !important;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.hover {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
   }
 }
