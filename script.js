@@ -398,7 +398,7 @@ function initModal() {
 
   let lastFocusedEl = null;
   projectCards.forEach((card) => {
-    card.addEventListener("click", (e) => {
+    const openCardModal = (e) => {
       // Don't open modal if user clicked a link inside the card
       if (e.target.closest(".project-link")) return;
       const key = card.getAttribute("data-case-study");
@@ -413,6 +413,14 @@ function initModal() {
         caseStudyModal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
         if (modalClose) modalClose.focus();
+      }
+    };
+
+    card.addEventListener("click", openCardModal);
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openCardModal(e);
       }
     });
   });
