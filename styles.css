@@ -23,7 +23,7 @@
   top: -40px;
   left: 0;
   background: var(--primary-color);
-  color: white;
+  color: var(--bg-primary);
   padding: 8px;
   z-index: 10000;
   transition: top 0.3s;
@@ -240,7 +240,7 @@ p {
 
 .btn-secondary:hover {
   background: var(--primary-color);
-  color: white;
+  color: var(--bg-primary);
   transform: translateY(-2px);
 }
 
@@ -366,7 +366,7 @@ p {
 
 .theme-toggle:hover {
   background: var(--primary-color);
-  color: white;
+  color: var(--bg-primary);
   transform: rotate(20deg);
 }
 
