@@ -381,26 +381,74 @@ p {
   overflow: hidden;
 }
 
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 100px 20px 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+.centered-hero .hero-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 90px 20px 80px;
   z-index: 2;
   position: relative;
 }
 
-.hero-content {
-  animation: slideInLeft 0.8s ease-out;
+.centered-hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+.hero-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-color);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.hero-avatar-small {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-avatar-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.centered-hero .hero-title {
+  font-size: clamp(3rem, 5vw + 1rem, 5.5rem);
   line-height: 1.1;
+  margin-bottom: 1rem;
   color: var(--text-primary);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -410,47 +458,44 @@ p {
   color: var(--text-primary);
 }
 
-.hero-subtitle {
-  font-size: 1.25rem;
+.centered-hero .hero-subtitle {
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: var(--text-secondary);
   font-weight: 500;
 }
 
-.hero-description {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+.centered-hero .hero-description {
+  font-size: 1.25rem;
   color: var(--text-secondary);
-  max-width: 500px;
+  max-width: 650px;
+  margin: 0 auto 2.5rem auto;
 }
 
-.hero-buttons {
+.centered-hero .hero-buttons {
+  justify-content: center;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: slideInRight 0.8s ease-out;
+.fade-in-element {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
+.hero-status-badge.fade-in-element { animation-delay: 0.1s; }
+.hero-avatar-small.fade-in-element { animation-delay: 0.2s; }
+.hero-title.fade-in-element { animation-delay: 0.3s; }
+.hero-subtitle.fade-in-element { animation-delay: 0.4s; }
+.hero-description.fade-in-element { animation-delay: 0.5s; }
+.hero-buttons.fade-in-element { animation-delay: 0.6s; }
 
-.hero-avatar {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-lg);
-  position: relative;
-}
-
-.hero-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-background {
@@ -1266,28 +1311,21 @@ textarea:focus {
   }
 
   /* Hero */
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-    padding: 100px 20px 60px;
+  .centered-hero .hero-container {
+    padding: 80px 20px 60px;
   }
 
-  .hero-title {
-    font-size: 2.4rem;
+  .centered-hero .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .centered-hero .hero-subtitle {
+    font-size: 1.25rem;
   }
 
-  .hero-description {
-    margin: 0 auto 2rem;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-avatar {
-    width: 220px;
-    height: 220px;
+  .hero-avatar-small {
+    width: 180px;
+    height: 180px;
   }
 
   /* About */
