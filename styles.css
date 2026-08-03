@@ -1330,8 +1330,8 @@ textarea:focus {
   }
 
   .project-card {
-    flex: 1 1 100%;
-    min-width: 100%;
+    width: 100%;
+    min-width: 0;
   }
 
   /* Experience */
