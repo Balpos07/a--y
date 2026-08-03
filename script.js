@@ -10,7 +10,6 @@ function initializeApp() {
   initParallax();
   initButtonRipples();
   initShowMore();
-  initCustomCursor();
 }
 
 // ========== DARK MODE TOGGLE ==========
@@ -320,6 +319,36 @@ function initModal() {
   if (!caseStudyModal || !modalClose) return;
 
   const caseStudies = {
+    meditrust: {
+      title: "MediTrust",
+      description: `<h3>Challenge</h3>
+        <p>Develop a robust and secure healthcare management platform that can handle sensitive patient records while providing an intuitive interface for healthcare professionals.</p>
+        <h3>Biggest Challenge & How I Solved It</h3>
+        <p>Ensuring HIPAA-compliant data security while maintaining real-time dashboard performance. I solved this by implementing field-level encryption on the MongoDB database and using WebSocket connections with strict authentication payloads to deliver fast, secure updates without compromising patient data.</p>
+        <h3>Solution</h3>
+        <p>Built a scalable MERN stack application with advanced security protocols, real-time updates, and an intuitive dashboard for managing patient care, appointments, and medical histories.</p>
+        <h3>Impact</h3>
+        <p>Streamlined clinical operations and improved patient data accessibility while maintaining strict compliance with healthcare data standards.</p>
+        <h3>Technologies</h3>
+        <p>React, Node.js, Express, MongoDB, Tailwind CSS</p>`,
+      liveLink: "https://meditrustapp.vercel.app/",
+      githubLink: "#",
+    },
+    m4dg: {
+      title: "M4DG (Christian Blog)",
+      description: `<h3>Challenge</h3>
+        <p>Create a modern, engaging platform for a Christian blog that handles rich media content and allows for community interaction.</p>
+        <h3>Biggest Challenge & How I Solved It</h3>
+        <p>Managing and delivering high-resolution images and multimedia content globally without degrading load times. I implemented Next.js Image Optimization alongside a CDN-backed headless CMS architecture, which improved First Contentful Paint (FCP) by over 60% and secured a 98+ Lighthouse performance score.</p>
+        <h3>Solution</h3>
+        <p>Developed a responsive and SEO-friendly blog using Next.js, featuring a clean UI with Tailwind CSS and a robust headless CMS integration for seamless content management.</p>
+        <h3>Impact</h3>
+        <p>Provided a reliable, fast-loading platform for faith-based content delivery, increasing user engagement and content reach.</p>
+        <h3>Technologies</h3>
+        <p>Next.js, Tailwind CSS, CMS</p>`,
+      liveLink: "https://m4dg.site",
+      githubLink: "#",
+    },
     weatherapp: {
       title: "Weather App",
       description: `<h3>Challenge</h3>
@@ -363,6 +392,8 @@ function initModal() {
       title: "Greenland Farm",
       description: `<h3>Challenge</h3>
         <p>Develop a full-featured e-commerce platform with product management and secure payments.</p>
+        <h3>Biggest Challenge & How I Solved It</h3>
+        <p>Handling complex Redux state for the shopping cart across multiple device sessions and ensuring payment idempotency. I adopted Redux Toolkit to simplify state slices and integrated Stripe webhooks on the Node backend to reliably sync order statuses even if the client disconnected during payment.</p>
         <h3>Solution</h3>
         <p>Built a React and Redux-based platform with comprehensive product listings, cart functionality, and Stripe payment integration. Includes admin dashboard for inventory management.</p>
         <h3>Impact</h3>

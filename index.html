@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#667eea" />
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -65,21 +65,17 @@
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary" aria-label="View projects">View My Work</a>
           <a href="#contact" class="btn btn-secondary" aria-label="Contact">Get In Touch</a>
-          <a href="./assets/Ayo Balogun CV.pdf" download="Ayo Balogun CV.pdf" class="btn btn-primary" style="background: var(--accent-color);" aria-label="Download resume">Download Resume</a>
+          <a href="./assets/Ayo Balogun CV.pdf" download="Ayo Balogun CV.pdf" class="btn btn-secondary" aria-label="Download resume">Download Resume</a>
         </div>
       </div>
       <div class="hero-image">
           <div class="hero-avatar">
-          <img src="./assets/ayo.jpg" alt="Ayomiposi portrait" loading="lazy" />
+          <img src="./assets/ayo.webp" alt="Ayomiposi portrait" loading="lazy" />
         </div>
       </div>
     </div>
     <div class="hero-background">
-      <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-      </div>
+      <!-- Minimalist background, floating shapes removed for professional look -->
     </div>
   </section>
 
@@ -87,15 +83,16 @@
   <section id="about" class="about" data-animate="true">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          A passionate front-end developer with a Computer Science background,
-          I specialize in crafting responsive, intuitive user experiences
-          using modern technologies, driven by a collaborative mindset and
-          commitment to continuous learning.
+      <div class="about-intro">
+        <p class="about-bio">I bridge the gap between design and engineering, specializing in scalable front-end architectures and pixel-perfect UIs. With a strong Computer Science foundation, I build high-performance web applications that drive business value and deliver exceptional user experiences.</p>
+      </div>
+
+      <div class="about-details">
+        <div class="detail-card skills-card">
+          <h3 class="detail-title">Core Skills</h3>
           <div class="skills-grid">
             <div class="skill-category">
-              <h3>Frontend</h3>
+              <h4>Frontend</h4>
               <div class="skill-tags">
                 <span class="skill-tag">React</span>
                 <span class="skill-tag">Shadcn UI</span>
@@ -104,7 +101,7 @@
               </div>
             </div>
             <div class="skill-category">
-              <h3>Backend</h3>
+              <h4>Backend</h4>
               <div class="skill-tags">
                 <span class="skill-tag">Next JS</span>
                 <span class="skill-tag">Firebase</span>
@@ -112,7 +109,7 @@
               </div>
             </div>
             <div class="skill-category">
-              <h3>Tools</h3>
+              <h4>Tools</h4>
               <div class="skill-tags">
                 <span class="skill-tag">Git</span>
                 <span class="skill-tag">Docker</span>
@@ -122,18 +119,22 @@
             </div>
           </div>
         </div>
-        <div class="about-stats">
-          <div class="stat-item">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">Projects Completed</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">3+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">25+</div>
-            <div class="stat-label">Happy Clients</div>
+
+        <div class="detail-card stats-card">
+          <h3 class="detail-title">Quick Stats</h3>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">25+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
           </div>
         </div>
       </div>
@@ -146,11 +147,92 @@
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
         <!-- Initial visible projects -->
-        <div class="project-card" data-case-study="weatherapp" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Weather App case study">
+        <div class="project-card" data-case-study="meditrust" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Meditrust case study">
           <div class="project-image">
-            <img data-src="./assets/map.png" alt="Weather App screenshot" class="project-thumb" />
+            <div style="background: var(--bg-secondary); height: 100%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 2.5rem; font-weight: bold; border-bottom: 1px solid var(--border-color);">
+              <i class="fas fa-notes-medical" style="margin-right: 10px;"></i> MediTrust
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://meditrustapp.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a href="#" class="project-link">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">MediTrust</h3>
+            <p class="project-description">
+              A comprehensive healthcare and medical trust management platform designed for scale and security.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-case-study="m4dg" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open M4DG case study">
+          <div class="project-image">
+            <div style="background: var(--bg-secondary); height: 100%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 2.5rem; font-weight: bold; border-bottom: 1px solid var(--border-color);">
+              <i class="fas fa-cross" style="margin-right: 10px;"></i> M4DG
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://m4dg.site" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a href="#" class="project-link">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">M4DG (Christian Blog)</h3>
+            <p class="project-description">
+              A modern Christian blog platform dedicated to sharing faith-based content and community discussions.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">Tailwind</span>
+              <span class="tech-tag">CMS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- E-commerce project card -->
+        <div class="project-card" data-case-study="ecommerce" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open E-commerce case study">
+          <div class="project-image">
+            <img data-src="./assets/green.webp" alt="E-commerce screenshot" class="project-thumb" />
             <div
-              style="background: url('./assets/map.png'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+              style="background: url('./assets/green.webp'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://greenlandfarms.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a href="https://github.com/Balpos07/green-bush" class="project-link">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Greenland Farms</h3>
+            <p class="project-description">
+              A full-featured e-commerce platform with product listings, cart functionality,
+              and secure payment processing. Includes admin dashboard for inventory management.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Redux</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card hidden" data-case-study="weatherapp" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Weather App case study">
+          <div class="project-image">
+            <img data-src="./assets/map.webp" alt="Weather App screenshot" class="project-thumb" />
+            <div
+              style="background: url('./assets/map.webp'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
               <i class="fas fa-cloud-sun"></i>
             </div>
             <div class="project-overlay">
@@ -174,9 +256,9 @@
           </div>
         </div>
 
-        <div class="project-card" data-case-study="taskmanager" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Task Manager case study">
+        <div class="project-card hidden" data-case-study="taskmanager" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Task Manager case study">
           <div class="project-image">
-            <img data-src="./assets/task.png" alt="Task Manager screenshot" class="project-thumb" />
+            <img data-src="./assets/task.webp" alt="Task Manager screenshot" class="project-thumb" />
             <div class="project-overlay">
               <div class="project-links">
                 <a href="http://task-manager-ay.vercel.app/" class="project-link">Live Demo</a>
@@ -200,11 +282,11 @@
           </div>
         </div>
 
-        <div class="project-card" data-case-study="calculator" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Calculator case study">
+        <div class="project-card hidden" data-case-study="calculator" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open Calculator case study">
           <div class="project-image">
-            <img data-src="./assets/calc.jpeg" alt="Calculator screenshot" class="project-thumb" />
+            <img data-src="./assets/calc.webp" alt="Calculator screenshot" class="project-thumb" />
             <div
-              style="background: url('./assets/calc.jpeg'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+              style="background: url('./assets/calc.webp'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
               <i class="fas fa-calculator"></i>
             </div>
             <div class="project-overlay">
@@ -230,35 +312,7 @@
           </div>
         </div>
 
-        <!-- E-commerce project card (hidden by default) -->
-        <div class="project-card hidden" data-case-study="ecommerce" style="cursor: pointer;" role="button" tabindex="0" aria-label="Open E-commerce case study">
-          <div class="project-image">
-            <img data-src="./assets/green.png" alt="E-commerce screenshot" class="project-thumb" />
-            <div
-              style="background: url('./assets/green.png'); background-size: cover; background-position: center; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-              <i class="fas fa-shopping-cart"></i>
-            </div>
-            <div class="project-overlay">
-              <div class="project-links">
-                <a href="https://greenlandfarms.vercel.app/" class="project-link">Live Demo</a>
-                <a href="https://github.com/Balpos07/green-bush" class="project-link">Source Code</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Greenland Farms</h3>
-            <p class="project-description">
-              A full-featured e-commerce platform with product listings, cart functionality,
-              and secure payment processing. Includes admin dashboard for inventory management.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Redux</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">MongoDB</span>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       <!-- Show More Button -->
@@ -421,58 +475,7 @@
     </div>
   </section>
 
-    </div>
-  </section>
 
-  <!-- Testimonials Section -->
-  <!-- <section id="testimonials" class="testimonials" data-animate="true">
-    <div class="container">
-      <h2 class="section-title">What People Say</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Ayomiposi delivered exceptional work on our farm support platform. Their attention to detail and problem-solving skills made a real difference."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">👤</div>
-            <div class="author-info">
-              <h4>David Okonkwo</h4>
-              <p>Project Lead, Kwezi Technologies</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Working with Ayomiposi on our e-commerce platform was seamless. They have strong technical skills and great communication."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">👤</div>
-            <div class="author-info">
-              <h4>Sarah Adeyemi</h4>
-              <p>CEO, Gen128 Business Solutions</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Ayomiposi's dashboard design was modern, responsive, and exactly what we needed. Highly recommended for any project."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">👤</div>
-            <div class="author-info">
-              <h4>Michael Chen</h4>
-              <p>Product Manager, Tech Startup</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <!-- Contact Section -->
   <section id="contact" class="contact" data-animate="true">
@@ -606,7 +609,7 @@
     </div>
   </div>
 
-  <div class="custom-cursor" id="customCursor"></div>
+
   <script src="script.js"></script>
   <!-- Analytics: replace data-domain with your domain or remove if not using Plausible -->
   <script async defer data-domain="yourdomain.com" src="https://plausible.io/js/plausible.js"></script>
