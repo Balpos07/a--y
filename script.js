@@ -202,7 +202,7 @@ function initScrollAnimations() {
     }
 
     const cards = section.querySelectorAll(
-      ".project-card, .testimonial-card, .skill-category",
+      ".project-card, .skill-category, .timeline-item, .detail-card",
     );
     cards.forEach((card, index) => {
       card.classList.add("fade-in-up");
