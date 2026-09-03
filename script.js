@@ -239,8 +239,8 @@ function initShowMore() {
             title: "Blogging Platform",
             description:
               "A modern blogging platform with rich text editing, user authentication, and SEO-friendly features.",
-            liveLink: "#",
-            githubLink: "#",
+            liveLink: "",
+            githubLink: "",
             tech: ["Next.js", "GraphQL", "Prisma", "PostgreSQL"],
             bgStyle: "linear-gradient(135deg, #0ea5e9, #7dd3fc)",
           },
@@ -249,8 +249,8 @@ function initShowMore() {
             title: "Travel Planner",
             description:
               "Interactive travel planning app that helps users discover destinations and create itineraries.",
-            liveLink: "#",
-            githubLink: "#",
+            liveLink: "",
+            githubLink: "",
             tech: ["Vue.js", "Firebase", "Google Maps API", "Tailwind CSS"],
             bgStyle: "linear-gradient(135deg, #ec4899, #f9a8d4)",
           },
@@ -263,7 +263,7 @@ function initShowMore() {
           card.style.cursor = "pointer";
           card.innerHTML = `
             <div class="project-image">
-              <div style="background: ${data.bgStyle}; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+              <div style="background: ${data.bgStyle}; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: calc(2rem - 1px);">
                 <i class="fas fa-blog"></i>
               </div>
               <div class="project-overlay">
@@ -324,7 +324,7 @@ function initModal() {
       description: `<h3>Challenge</h3>
         <p>Develop a robust and secure healthcare management platform that can handle sensitive patient records while providing an intuitive interface for healthcare professionals.</p>
         <h3>Biggest Challenge & How I Solved It</h3>
-        <p>Ensuring HIPAA-compliant data security while maintaining real-time dashboard performance. I solved this by implementing field-level encryption on the MongoDB database and using WebSocket connections with strict authentication payloads to deliver fast, secure updates without compromising patient data.</p>
+        <p>Protecting sensitive healthcare data while keeping dashboard interactions responsive. I addressed this with encrypted database fields and authenticated real-time updates over WebSockets.</p>
         <h3>Solution</h3>
         <p>Built a scalable MERN stack application with advanced security protocols, real-time updates, and an intuitive dashboard for managing patient care, appointments, and medical histories.</p>
         <h3>Impact</h3>
@@ -332,14 +332,14 @@ function initModal() {
         <h3>Technologies</h3>
         <p>React, Node.js, Express, MongoDB, Tailwind CSS</p>`,
       liveLink: "https://meditrustapp.vercel.app/",
-      githubLink: "#",
+      githubLink: "",
     },
     m4dg: {
       title: "M4DG (Christian Blog)",
       description: `<h3>Challenge</h3>
         <p>Create a modern, engaging platform for a Christian blog that handles rich media content and allows for community interaction.</p>
         <h3>Biggest Challenge & How I Solved It</h3>
-        <p>Managing and delivering high-resolution images and multimedia content globally without degrading load times. I implemented Next.js Image Optimization alongside a CDN-backed headless CMS architecture, which improved First Contentful Paint (FCP) by over 60% and secured a 98+ Lighthouse performance score.</p>
+        <p>Managing rich media without compromising page performance. I used Next.js image optimization and a headless CMS workflow to keep content delivery fast and maintainable.</p>
         <h3>Solution</h3>
         <p>Developed a responsive and SEO-friendly blog using Next.js, featuring a clean UI with Tailwind CSS and a robust headless CMS integration for seamless content management.</p>
         <h3>Impact</h3>
@@ -347,7 +347,7 @@ function initModal() {
         <h3>Technologies</h3>
         <p>Next.js, Tailwind CSS, CMS</p>`,
       liveLink: "https://m4dg.site",
-      githubLink: "#",
+      githubLink: "",
     },
     weatherapp: {
       title: "Weather App",
@@ -411,8 +411,8 @@ function initModal() {
         <p>Built a platform supporting posts, comments, and SEO optimizations with an intuitive editor.</p>
         <h3>Technologies</h3>
         <p>Next.js, GraphQL, Prisma, PostgreSQL</p>`,
-      liveLink: "#",
-      githubLink: "#",
+      liveLink: "",
+      githubLink: "",
     },
     travel: {
       title: "Travel Planner",
@@ -422,8 +422,8 @@ function initModal() {
         <p>Interactive planner with maps, saving itineraries, and sharing features.</p>
         <h3>Technologies</h3>
         <p>Vue.js, Firebase, Google Maps API, Tailwind CSS</p>`,
-      liveLink: "#",
-      githubLink: "#",
+      liveLink: "",
+      githubLink: "",
     },
   };
 
@@ -437,8 +437,12 @@ function initModal() {
       if (study) {
         document.getElementById("modalTitle").textContent = study.title;
         document.getElementById("modalBody").innerHTML = study.description;
-        document.getElementById("modalLiveLink").href = study.liveLink;
-        document.getElementById("modalGithubLink").href = study.githubLink;
+        const modalLiveLink = document.getElementById("modalLiveLink");
+        const modalGithubLink = document.getElementById("modalGithubLink");
+        modalLiveLink.hidden = !study.liveLink;
+        modalGithubLink.hidden = !study.githubLink;
+        if (study.liveLink) modalLiveLink.href = study.liveLink;
+        if (study.githubLink) modalGithubLink.href = study.githubLink;
         lastFocusedEl = document.activeElement;
         caseStudyModal.style.display = "block";
         caseStudyModal.setAttribute("aria-hidden", "false");
